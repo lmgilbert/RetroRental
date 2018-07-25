@@ -1,0 +1,424 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+p {
+    color: #56232e;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h2 {
+    font-family: 'Fjalla One', sans-serif;
+    color: #d8a84e;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+h5 {
+    text-transform: uppercase;
+    color: #d8a84e;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+#logo h2{
+    color: #56232e;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+#logo h2:hover {
+    color: #eb5c23;
+}
+
+.btn {
+    background-color: #d8a84e;
+    border-color: #d8a84e;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #eb5c23;
+    border-color: #eb5c23;
+}
+
+#btn-about {
+    background-color: white;
+    border-color: white;
+    color: #ef4548;
+}
+
+#btn-about:hover {
+    background-color: #56232e;
+    border-color: #56232e;
+    color: white;
+}
+
+.header-wrapper {
+    margin-bottom: 30px;
+}
+
+.header-stars {
+    width: 50px;
+    padding-bottom: 5px;
+}
+
+/* Nav */
+.navbar {
+    background-color: white;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#navigation {
+    position: fixed;
+    z-index: 20;
+    height: 48px;
+    background-color: white;
+}
+
+.navbar-light {
+    position: fixed;
+    z-index: 20;
+}
+
+#logo h2{
+    padding: 0 0 0 15px;
+    margin: 0;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #eb5c23 !important;
+    margin: 0px 5px;
+}
+
+.nav-item a:hover {
+    color: #56232e !important;
+}
+
+.nav-star {
+    width: 15px;
+    display: none;
+    margin: auto;
+}
+
+#nav-link-hover:hover .nav-star{
+    display: block !important;
+}
+
+/* modal */
+.modal-body {
+    padding: 15px 15px;
+    text-align: center;
+    margin: 0px;
+}
+
+.prices {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.selected-vehicle-quote {
+    padding-bottom: 35px;
+    padding-top: 25px;
+    margin-top: 15px;
+    background-color: #d8a84e;
+}
+
+.vehicle-quote-label {
+    padding-top: 10px;
+    margin-left: 0;
+}
+
+.final-price {
+    padding-top: 7px;
+    color: white;
+    margin-top: 7px;
+}
+
+#vehicle-quote-button {
+    background-color: #eb5c23;
+    margin-top: 15px;
+    text-align: left; 
+}
+
+.price-span {
+    color: white;
+    font-weight: 300;
+}
+
+#dropdown-select{
+    border-right: 1px solid white;
+}
+
+.modal-title {
+    padding-top: 15px;
+}
+
+.dropdown-label {
+    color: white;
+    font-weight: 600;
+}
+
+.overlap-header {
+    color: white;
+}
+
+/* top slider */
+#top-slider {
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#top-overlap-text {
+    padding: 150px 0px;
+    height: 100vh;
+    position: absolute;
+    width: 25%;
+    z-index: 13;
+}
+
+.quote-label {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.quote-label:last-of-type {
+    margin-top: 10px;
+}
+
+#quote-button {
+    margin-top: 15px;
+}
+
+.quote-input {
+    padding: 0px 20px;
+}
+
+#image {
+    width: 100%;
+    height: 100vh;
+    /* parallax */background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+/* Vehicles */
+#image #text-box-top {
+    position: absolute;
+    opacity: 0.85;
+    background-color: #eb5c23;
+    height: 100vh;
+    width: 25%;
+    z-index: 10;
+}
+
+#vehicles {
+    padding: 50px 0px;
+}
+
+.card {
+    border: none;
+}
+
+.price {
+    color: #56232e;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* bottom slider */
+#bottom-slider {
+    margin: 0px;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#bottom-image {
+    width: 100%;
+    height: 100vh;
+    /*parallax*/background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+#bottom-image #text-box-bottom {
+    position: absolute;
+    opacity: 0.85;
+    background-color: #ef4548;
+    height: 100vh;
+    width: 25%;
+    z-index: 11;
+    right: 0;  
+}
+
+#bottom-overlap-text {
+    padding: 150px 0px;
+    height: 100vh;
+    position: absolute;
+    width: 25%;
+    z-index: 12;
+    right: 0;  
+}
+
+.overlap-paragraph {
+    color: white;
+    padding: 0px 40px;
+    font-size: 0.95rem;
+}
+
+/*contact*/
+#contact {
+    padding: 50px 0px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    color: #56232e;
+}
+
+input[type="text"],
+input[type="email"],
+textarea.form-control {
+    width: 100%;
+    border: 1px solid #d8a84e;
+    background-color: white;
+    color: #56232e;
+}
+
+textarea {
+    max-height: 200px;
+    height: 200px;
+}
+
+.form-control:focus {
+    border-color: #d8a84e;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 100, 255, 0.5);
+}
+
+/* footer */
+#footer {
+    height: 60px;
+    background-color: #56232e;
+    padding-top: 20px;
+}
+
+.footer-links {
+    color: white;
+    margin: 0px 10px;
+    font-size: 0.9rem;
+}
+
+.footer-links:hover {
+    color: #eb5c23;
+}
+
+.footer-icons {
+    color: white;
+    font-size: 1.1rem;
+    margin: 20px 5px 0px 5px;
+
+}
+
+.footer-icons:hover {
+    color: #eb5c23;
+}
+
+/* media queries */
+@media only screen and (max-width: 1300px) {
+    #bottom-image #text-box-bottom{
+        width: 30%;
+    }
+    #bottom-overlap-text {
+        width: 30%;
+        padding-top: 40px;
+    }
+    #image #text-box-top {
+        width: 30%;
+    }
+    #top-overlap-text{
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    #bottom-image #text-box-bottom{
+        width: 50%;
+    }
+    #bottom-overlap-text {
+        width: 50%;
+        padding-top: 50px;
+    }
+    #image #text-box-top {
+        width: 50%;
+    }
+    #top-overlap-text{
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .prices-spans {
+        padding: 15px 50px 0px 50px;
+        margin-top: 15px;
+        border-top: 1px solid white;
+    }
+
+    #dropdown-select {
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #bottom-image #text-box-bottom{
+        width: 75%;
+    }
+    #bottom-overlap-text {
+        width: 75%;
+    }
+    #image #text-box-top {
+        width: 75%;
+    }
+    #top-overlap-text{
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #bottom-image #text-box-bottom{
+        width: 100%;
+    }
+    #bottom-overlap-text {
+        width: 100%;
+    }
+    #image #text-box-top {
+        width: 100%;
+    }
+    #top-overlap-text{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    #bottom-overlap-text {
+        padding: 30px 0px;
+        font-size: 0.8rem;
+    }
+}

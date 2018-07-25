@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Retro Rental</title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+            crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+            crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Quicksand" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+        <div class="modal fade bd-example-modal-lg" id="bd-example-modal-lg" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center modal-title">
+                                <div class="header-wrapper">
+                                    <img class="header-stars" src="img/yellow-star.png" alt="header stars">
+                                    <h2>Available Vehicles</h2>
+                                </div>
+                            </div>
+                            <div class="col modal-body row" id="show-vehicles">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade bd-modal-lg" id="vehicle-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center modal-title">
+                                <div class="header-wrapper">
+                                    <img class="header-stars" src="img/yellow-star.png" alt="header stars">
+                                    <h2>your quote</h2>
+                                </div>
+                            </div>
+                            <div class="col modal-body row vehicle-body" id="show-vehicle">
+                            </div>
+                            <div class="col modal-body row selected-vehicle-quote">
+                                <div class="col-lg-6 col-md-12" id="dropdown-select">
+                                    <div id="delete-me"><label class="col-10 vehicle-quote-label text-left dropdown-label" id="delete">How many Days</label>
+                                    <select class="custom-select col-10" id="days-vehicle-select">
+                                    </select>
+                                    </div>
+                                    <label class="col-10 vehicle-quote-label text-left dropdown-label">How much travelling will you do?</label>
+                                    <select class="custom-select col-10" id="distance-vehicle-select">
+                                        <option selected value="0">Select distance</option>
+                                        <option value="25">0-25 km/day</option>
+                                        <option value="50">25-50 km/day</option>
+                                        <option value="75">50-75 km/day</option>
+                                        <option value="100">75-100 km/day</option>
+                                        <option value="150">100-150 km/day</option>
+                                        <option value="200">150-200 km/day</option>
+                                        <option value="250">200-250 km/day</option>
+                                        <option value="300">250-300 km/day</option>
+                                        <option value="350">300-350 km/day</option>
+                                        <option value="400">350-400 km/day</option>
+                                        <option value="450">400-450 km/day</option>
+                                        <option value="500">450-500 km/day</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 col-md-12 text-left prices-spans">
+                                    <p class="prices">Price per day:
+                                        <span class="price-span" id="day-price"></span>
+                                    </p>
+                                    <p class="prices" id="selected-day-p">
+                                    </p>
+                                    <p class="prices">Price per selected days:
+                                        <span class="price-span" id="selected-day-price"></span>
+                                    </p>
+                                    <p class="prices">Litres:
+                                        <span class="price-span" id="distance-price"></span>
+                                    </p>
+                                    <p class="prices">Price per selected distance:
+                                        <span class="price-span" id="selected-distance-price"></span>
+                                    </p>
+                                    <p class="prices final-price">Total Price:
+                                        <span id="final-selected-price"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="navigation"></div>
+        <nav class="navbar navbar-expand-lg navbar-light navbar-fixed">
+            <a id="logo" href="#" class="navbar-brand">
+                <h2>Retro Rental</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+                aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="#">Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="top-slider">
+            <div id="image" style="background-image: url('img/thomas-millot-351782-unsplash.jpg');">
+                <div id="text-box-top"></div>
+                <div id="top-overlap-text">
+                    <div class="header-wrapper text-center">
+                        <img class="header-stars" src="img/white-star.png" alt="header stars">
+                        <h2 class="overlap-header">Ride in Style</h2>
+                        <p class="overlap-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat.</p>
+                    </div>
+                    <div id="quote">
+                        <div class="text-center">
+                            <img class="header-stars" src="img/white-star.png" alt="header stars">
+                            <h2 class="overlap-header">Get a quote</h2>
+                        </div>
+                        <form>
+                            <div class="align-items-center text-center">
+                                <!--<<label class="col-9 quote-label" for="inlineFormCustomSelectPref">Pick up Location</label>
+                                    <select class="custom-select col-9 quote-drop" id="inlineFormCustomSelect">
+                                        <option value="1">Auckland Domestic Airport</option>
+                                        <option value="2">Christchurch Airport</option>
+                                        <option value="3">Wellington Airport</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                    <label class="col-9 quote-label" for="inlineFormCustomSelectPref">Drop off Location</label>
+                                    <select class="custom-select col-9 quote-drop" id="inlineFormCustomSelect">
+                                        <option selected>Choose...</option>
+                                        <option value="1">Auckland Domestic Airport</option>
+                                        <option value="2">Christchurch Airport</option>
+                                        <option value="3">Wellington Airport</option>
+                                        <option value="3">3</option>
+                                    </select>-->
+                                <label class="col-7 quote-label">How many People</label>
+                                <select class="custom-select col-7 quote-drop" id="people-select">
+                                    <!--<option selected>Choose...</option>-->
+                                    <option selected value="0">Select People</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                                <label class="col-7 quote-label">How many Days</label>
+                                <select class="custom-select col-7" id="days-select">
+                                    <option selected value="0">Select Days</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary" id="quote-button" data-toggle="modal" data-target=".bd-example-modal-lg">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="vehicles">
+            <div class="container text-center">
+                <div class="header-wrapper">
+                    <img class="header-stars" src="img/yellow-star.png" alt="header stars">
+                    <h2>Our Vehicles</h2>
+                </div>
+                <div class="row" id="vehicle-list">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/pedro-pereira-158920-unsplash.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">1992 Vespa</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    Some quick example text</p>
+                                <p class="price">$109.00 per day</p>
+                                <button type="button" class="btn vehicle-button" id="vespa" data-toggle="modal" data-target="#vehicle-modal" name="vespa">Get a quote</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/marifer-583917-unsplash.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">1960 Ford Thunderbird</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="price">$129.00 per day</p>
+                                <button type="button" class="btn vehicle-button" id="ford" data-toggle="modal" data-target="#vehicle-modal" name="ford">Get a quote</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/josh-rinard-71760-unsplash.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">1973 Lancia Fulvia Zagato
+                                </h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="price">$144.00 per day</p>
+                                <button type="button" class="btn vehicle-button" id="lancia" data-toggle="modal" data-target="#vehicle-modal" name="lancia">Get a quote</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img class="card-img-top" src="img/mroux-bulikowska-86260-unsplash.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">1978 Volkswagen camper van</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="price">$200.00 per day</p>
+                                <button type="button" class="btn vehicle-button" id="volkswagen" data-toggle="modal" data-target="#vehicle-modal" name="volkswagen">Get a quote</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bottom-slider">
+            <div id="bottom-image" style="background-image: url('img/clem-onojeghuo-136261-unsplash copy.jpg');">
+                <div id="text-box-bottom"></div>
+                <div id="bottom-overlap-text">
+                    <div class="header-wrapper text-center">
+                        <img class="header-stars" src="img/white-star.png" alt="header star">
+                        <h2 class="overlap-header">about us</h2>
+                        <p class="overlap-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                            eu fugiat nulla pariatur. </p>
+                        <p class="overlap-paragraph">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                            rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                            explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+                            magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+                        <a href="#" class="btn btn-primary" id="btn-about">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="container text-center">
+                <div class="header-wrapper">
+                    <img class="header-stars" src="img/yellow-star.png" alt="header star">
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="text" class="form-control" name="contact_name" id="contact-name" value="" placeholder="Your Name" tabindex="1">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="text" class="form-control" name="contact_email" id="contact-email" value="" placeholder="Your Email" tabindex="2">
+                    </div>
+                    <div class="col-2">
+                    </div>
+                    <div class="col-2">
+                    </div>
+                    <div class="col-md-8 form-group">
+                        <textarea name="contact-message" id="contact-message" class="form-control" tabindex="4" placeholder="Your Message"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <p id="alert"></p>
+                    </div>
+                    <div class="col-12 form-group">
+                        <input type="submit" class="btn" value="Submit" id="validate">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <a href="#" class="footer-links">Hire Terms</a>
+                        <a href="#" class="footer-links">Contact Us</a>
+                        <a href="#" class="footer-links">Sitemap</a>
+                        <a href="#" class="footer-links">FAQs</a>
+                        <a href="#" class="footer-links">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
