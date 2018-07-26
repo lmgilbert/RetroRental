@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Quicksand" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
-    <body>
+    <body id="home">
         <div class="modal fade bd-example-modal-lg" id="bd-example-modal-lg" tabindex="-1" role="dialog"
             aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -94,9 +94,8 @@
                 </div>
             </div>
         </div>
-        <div id="navigation"></div>
         <nav class="navbar navbar-expand-lg navbar-light navbar-fixed">
-            <a id="logo" href="#" class="navbar-brand">
+            <a id="logo" href="#home" class="navbar-brand">
                 <h2>Retro Rental</h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
@@ -106,13 +105,13 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link nav-link-hover" href="#">Vehicles</a>
+                        <a class="nav-link nav-link-hover" href="#vehicles">Vehicles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-hover" href="#">About</a>
+                        <a class="nav-link nav-link-hover" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-hover" href="#">Contact</a>
+                        <a class="nav-link nav-link-hover" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -124,9 +123,7 @@
                     <div class="header-wrapper text-center">
                         <img class="header-stars" src="img/white-star.png" alt="header stars">
                         <h2 class="overlap-header">Ride in Style</h2>
-                        <p class="overlap-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.</p>
+                        <p class="overlap-paragraph">Whatever your needs, Retro Rental New Zealand has the right retro vehicle for your holiday, sports team, adventure or business trip.</p>
                     </div>
                     <div id="quote">
                         <div class="text-center">
@@ -196,8 +193,7 @@
                             <img class="card-img-top" src="img/pedro-pereira-158920-unsplash.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">1992 Vespa</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-                                    Some quick example text</p>
+                                <p class="card-text">Vespa is an Italian brand of scooter manufactured by Piaggio. The name means wasp in Italian and has evolved from a single model motor scooter manufactured in 1946.</p>
                                 <p class="price">$109.00 per day</p>
                                 <button data-button="vespa" type="button" class="btn vehicle-button" id="vespa" data-toggle="modal" data-target="#vehicle-modal" name="vespa">Get a quote</button>
                             </div>
@@ -208,7 +204,7 @@
                             <img class="card-img-top" src="img/marifer-583917-unsplash.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">1960 Ford Thunderbird</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">The Ford Thunderbird is a rear wheel drive automobile made by Ford in the United States over eleven model generations from 1955 through 2005.</p>
                                 <p class="price">$129.00 per day</p>
                                 <button data-button="ford" type="button" class="btn vehicle-button" id="ford" data-toggle="modal" data-target="#vehicle-modal" name="ford">Get a quote</button>
                             </div>
@@ -220,7 +216,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">1973 Lancia Fulvia Zagato
                                 </h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Fulvias are notable for their role in motorsport history and is named after Via Fulvia, the Roman road leading from Tortona to Torino.</p>
                                 <p class="price">$144.00 per day</p>
                                 <button data-button="lancia" type="button" class="btn vehicle-button" id="lancia" data-toggle="modal" data-target="#vehicle-modal" name="lancia">Get a quote</button>
                             </div>
@@ -231,7 +227,7 @@
                             <img class="card-img-top" src="img/mroux-bulikowska-86260-unsplash.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">1978 Volkswagen camper van</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">This van is a forward control panel van introduced in 1950 by the German automaker Volkswagen as its second car model and goes by different names.</p>
                                 <p class="price">$200.00 per day</p>
                                 <button data-button="volkswagen" type="button" class="btn vehicle-button" id="volkswagen" data-toggle="modal" data-target="#vehicle-modal" name="volkswagen">Get a quote</button>
                             </div>
@@ -240,22 +236,18 @@
                 </div>
             </div>
         </div>
-        <div id="bottom-slider">
-            <div id="bottom-image" style="background-image: url('img/clem-onojeghuo-136261-unsplash copy.jpg');">
-                <div id="text-box-bottom"></div>
-                <div id="bottom-overlap-text">
-                    <div class="header-wrapper text-center">
-                        <img class="header-stars" src="img/white-star.png" alt="header star">
-                        <h2 class="overlap-header">about us</h2>
-                        <p class="overlap-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. </p>
-                        <p class="overlap-paragraph">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                            rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                            explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                            magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-                        <a href="#" class="btn btn-primary" id="btn-about">learn more</a>
+        <div id="about">
+            <div id="bottom-slider">
+                <div id="bottom-image" style="background-image: url('img/clem-onojeghuo-136261-unsplash copy.jpg');">
+                    <div id="text-box-bottom"></div>
+                    <div id="bottom-overlap-text">
+                        <div class="header-wrapper text-center">
+                            <img class="header-stars" src="img/white-star.png" alt="header star">
+                            <h2 class="overlap-header">about us</h2>
+                            <p class="overlap-paragraph">We offer a wide range of late model rental cars ready for pick up to take you to your destinations of choice in Christchurch, the South Island and rest of New Zealand. Our range of rental cars includes small hatchbacks, sedans and station wagons, as well as rental vans, luggage carriers, mini buses and 4WD SUV vehicles, all at very competitive rates.  </p>
+                            <p class="overlap-paragraph">Travelling between towns and cities in a rental car allows you to thoroughly explore NZ's scenic rural areas, and gives you the flexibility to stop at small country cafes, wineries and other points of interest, or simply pause to admire a view. New Zealand's tourist routes are of a high standard and the main roads are sealed.</p>
+                            <a href="#" class="btn btn-primary" id="btn-about">learn more</a>
+                        </div>
                     </div>
                 </div>
             </div>

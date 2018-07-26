@@ -13,6 +13,7 @@ let vehicles = {
         "category" : "scooter",
         "image" : "pedro-pereira-158920-unsplash.jpg",
         "year" : "1992",
+        "description" : "Vespa is an Italian brand of scooter manufactured by Piaggio. The name means wasp in Italian and has evolved from a single model motor scooter manufactured in 1946.",
     },
 
     "ford" : {
@@ -27,6 +28,7 @@ let vehicles = {
         "category" : "car",
         "image" : "marifer-583917-unsplash.jpg",
         "year" : "1960",
+        "description" : "The Ford Thunderbird is a rear wheel drive automobile made by Ford in the United States over eleven model generations from 1955 through 2005.",
     },
 
     "lancia" : {
@@ -41,6 +43,7 @@ let vehicles = {
         "category" : "car",
         "image" : "josh-rinard-71760-unsplash.jpg",
         "year" : "1973",
+        "description" : "Fulvias are notable for their role in motorsport history and is named after Via Fulvia, the Roman road leading from Tortona to Torino.",
     },
 
     "volkswagen" : {
@@ -55,6 +58,7 @@ let vehicles = {
         "category" : "camper",
         "image" : "mroux-bulikowska-86260-unsplash.jpg",
         "year" : "1978",
+        "description" : "This van is a forward control panel van introduced in 1950 by the German automaker Volkswagen as its second car model and goes by different names.",
     },
 }
 
@@ -70,6 +74,15 @@ let quoteButton = $("#quote-button");
 let selectedQuoteDaySpan = $("#user-selected-day-price");
 let selectedDayP = $("#selected-day-p");
 let deleteMe = $("#delete-me");
+
+$(document).ready(function() {
+    $('#logo, .nav-link').click(function(e){
+        e.preventDefault();
+        var target = $(this).attr('href');
+        var target_div = $(target);
+        $('html,body').animate({scrollTop: $(target_div).offset().top - $("nav").height()}, 'slow');
+    });
+});
 
 // Filters through people selected people
 function filterByNumberOfPeople(unfilteredVehicles, numberOfPeople) {
@@ -138,7 +151,7 @@ quoteButton.click(function(event){
                                         <img class="card-img-top" src="img/${vehicles[key].image}" alt="Card image cap">
                                         <div class="card-body">
                                         <h5 class="card-title">${vehicles[key].year} ${key}</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <p class="card-text">${vehicles[key].description}</p>
                                         <p class="price">$${vehicles[key].price} per day</p>
                                         <button data-key="${key}" type="button" class="vehicle-select-button btn" id="${key}-quote-button" data-toggle="modal" data-target="#vehicle-modal" name="${[key]}" data-dismiss="modal">Select</button>
                                     </div>
@@ -159,7 +172,7 @@ quoteButton.click(function(event){
                     </div>
                     <div class="col-lg-6 text-left">
                         <h5 class="card-title">${vehicles[vespaVehicleQuoteButtonAttr].year} ${vehicles[vespaVehicleQuoteButtonAttr].name}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text</p>
+                        <p class="card-text">${vehicles[vespaVehicleQuoteButtonAttr].description}</p>
                         <p class="price">$${vehicles[vespaVehicleQuoteButtonAttr].price} per day</p>
                         <p class="price">Maximum 1 person</p>
                     </div>`;
@@ -195,10 +208,6 @@ quoteButton.click(function(event){
     });
 });
 
-$(document).ready(function() {
-    
-});
-
 
 
 // Bottom Vehicle selection
@@ -214,7 +223,7 @@ $(".vehicle-button").click(function(event) {
                             </div>
                             <div class="col-lg-6 text-left">
                                 <h5 class="card-title">${vehicles[vespabuttonAttr].year} ${vehicles[vespabuttonAttr].name}</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text</p>
+                                <p class="card-text">${vehicles[vespabuttonAttr].description}</p>
                                 <p class="price">$${vehicles[vespabuttonAttr].price.toFixed(2)} per day</p>
                                 <p class="price">Maximum ${vehicles[vespabuttonAttr].maximumPeople} people</p>
                             </div>`;
