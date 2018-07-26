@@ -58,10 +58,6 @@ let vehicles = {
     },
 }
 
-let vespaQuoteButton = $("#vespa");
-let fordQuoteButton = $("#ford");
-let lanciaQuoteButton = $("#lancia");
-let volkswagenQuoteButton = $("#volkswagen");
 let vehicleBody = $(".vehicle-body");
 let pricePerDaySpan = $("#day-price");
 let selectedDaySpan = $("#selected-day-price");
@@ -70,15 +66,12 @@ let daysVehicleSelect = $("#days-vehicle-select");
 let distanceVehicleSelect = $("#distance-vehicle-select");
 let selectedDistancePrice = $("#selected-distance-price");
 let finalSelectedPrice = $("#final-selected-price");
-
 let quoteButton = $("#quote-button");
-
 let selectedQuoteDaySpan = $("#user-selected-day-price");
 let selectedDayP = $("#selected-day-p");
 let deleteMe = $("#delete-me");
 
-
-
+// Filters through people selected people
 function filterByNumberOfPeople(unfilteredVehicles, numberOfPeople) {
     var filteredVehicle = {};
 
@@ -93,7 +86,7 @@ function filterByNumberOfPeople(unfilteredVehicles, numberOfPeople) {
     return filteredVehicle;
 }
 
-let noVehicles = `<h2>No available Vehicles :(</h2>`;
+// Filters through days selected days
 function filterByNumberOfDays(unfilteredVehicles, numberOfDays) {
     var filteredVehicle = {};
 
@@ -108,7 +101,9 @@ function filterByNumberOfDays(unfilteredVehicles, numberOfDays) {
     return filteredVehicle;
 }
 
+// Quote selection and display
 quoteButton.click(function(event){
+    //
     let quotePeopleDropDown = $("#people-select option:selected").text();
     let quoteDaysDropDown = $("#days-select option:selected").text();
 
@@ -116,7 +111,13 @@ quoteButton.click(function(event){
     vehiclesToDisplay = filterByNumberOfDays(vehiclesToDisplay, quoteDaysDropDown);
 
     let tryAgainMessage = `<h3 class="col text-center">Try Again</h3>`;
+    let noVehicles = `<h3 class="col text-center">No available Vehicles :(</h3>`;
     
+    if (Object.keys(vehiclesToDisplay).length === 0) {
+        $vehicleList.empty();
+        $vehicleList.append(noVehicles);
+        return;
+    }
 
     if (quotePeopleDropDown == "Select People" ) {
         $vehicleList.empty();
@@ -146,11 +147,6 @@ quoteButton.click(function(event){
         
         
         $vehicleList.append(vehicleItem);
-       /*if (vehicles[key].minimumPeople <= quotePeopleDropDown && vehicles[key].maximumPeople >= quotePeopleDropDown && vehicles[key].minimumDays <= quoteDaysDropDown && vehicles[key].maximumDays >= quoteDaysDropDown) {  
-            $vehicleList.append(vehicleItem);
-        }*/   
-        
-        
 
         let  VehicleQuoteButton= $("#vespa-quote-button");
         $(".vehicle-select-button").click(function(event) {
@@ -205,11 +201,14 @@ $(document).ready(function() {
 
 
 
-
+// Bottom Vehicle selection
 $(".vehicle-button").click(function(event) {
+    // Targets button 
     let vespabuttonAttr = $(event.target).attr("data-button");
+
     vehicleBody.empty();
     selectedDaySpan.empty();
+
     let vehicleQuoteItem = `<div class="col-lg-6">
                                 <img class="card-img-top" src="img/${vehicles[vespabuttonAttr].image}" alt="Card image cap">
                             </div>
@@ -221,13 +220,16 @@ $(".vehicle-button").click(function(event) {
                             </div>`;
                         
     let vespaMaxDaysItem = `<option selected value="0">Select days</option>
-                        <option value="1" name="1">1</option>
-                        <option value="2" name="2">2</option>
-                        <option value="3" name="3">3</option>
-                        <option value="4" name="4">4</option>
-                        <option value="5" name="5">5</option>`;
+                            <option value="1" name="1">1</option>
+                            <option value="2" name="2">2</option>
+                            <option value="3" name="3">3</option>
+                            <option value="4" name="4">4</option>
+                            <option value="5" name="5">5</option>`;
 
+    // Goes through Vehicles 
     Object.keys(vehicles).forEach(function(key) {
+
+        //if 
         if (vespabuttonAttr in vehicles) {
             vehicleBody.empty();
             daysVehicleSelect.empty();
